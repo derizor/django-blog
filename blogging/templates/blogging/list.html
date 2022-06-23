@@ -4,7 +4,7 @@
   {% for post in posts %}
   <div class="post">
     <h2>
-      <a href="{% url 'blog_detail' post.pk %}">{{ post }}</a>
+      <a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a>
     </h2>
     <p class="byline">
       Posted by {{ post.author.username }} &mdash; {{ post.published_date }}
@@ -13,8 +13,8 @@
       {{ post.text }}
     </div>
     <ul class="categories">
-      {% for category in post.categories.all %}
-        <li>{{ category }}</li>
+      {% for category in post.categorys.all %}
+        <li> {{ category }}</li>
       {% endfor %}
     </ul>
   </div>
