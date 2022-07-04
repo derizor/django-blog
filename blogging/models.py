@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=60)
     description = models.TextField(blank=True)
-    # posts = models.ManyToManyField(Post, blank=True, related_name='categories')
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -25,6 +24,7 @@ class Post(models.Model):
     def __str__(self):
         return f"{self.title}, {self.author}, {self.published_date}"
 
+#_________________________________________________________________________
 # class Post(models.Model):
 #     title = models.CharField(max_length=128)
 #     text = models.TextField(blank=True)
@@ -53,10 +53,3 @@ class Post(models.Model):
 #         return self.name
 
 #_______________________________________________
-
-# categ = Category.objects.all()
-# categ_tag = tuple(i.name for i in categ)
-
-# print("THESE ARE ALL CATEGORIES:", categ_tag)
-
-#     pass
